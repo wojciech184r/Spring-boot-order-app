@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form method="post" th:action="@{/order/save}" th:object="${orderToEdit}">
+
+    <table>
+
+
+        <!-- Pola id oraz createDate nie podlegają edycji z poziomu GUI-->
+        <!--Muszą pozostać ukryte ponieważ przesyłając do backendu obiekt orderToEdit jest uzupełniany o to co zostało zmienione na froncie-->
+        <!--Jeśli te pola nie zostaną na fronicie wymienione w tabeli jako ukryte, zostaną przekazane do backendu jako null, a tego nie chcemy-->
+        <!--Zasada w edycji jest taka: jeśli jakieś pole nie podlega edycji, w kodzie HTML musi wystąpić jako pole ukryte-->
+
+        <tbody>
+
+
+        <tr>
+            <td>
+                <input type="hidden" th:field="*{id}">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="hidden" th:field="*{createDate}">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="text" th:field="*{productName}"> Produkt Name </input>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="text" th:field="*{amount}"> Amount </input>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <button type="submit" > Updating List </button>
+            </td>
+
+        </tr>
+
+        </tbody>
+
+    </table>
+
+</form>
+
+<p><a th:href="@{/order/list}">Return to orders list</a></p>
+
+</body>
+</html>
