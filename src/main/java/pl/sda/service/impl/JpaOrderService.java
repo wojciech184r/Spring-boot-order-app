@@ -40,7 +40,7 @@ public class JpaOrderService implements OrderService {
     @Override
     public Object update(Order order) {
         orderRepository.save(order);
-        return null;
+        return order;
     }
 
     @Override

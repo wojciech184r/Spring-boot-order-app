@@ -48,7 +48,7 @@ public class InMemoryOrderService implements OrderService {
             }
         }
 
-        return null;
+        return order;
     }
 
     @Override

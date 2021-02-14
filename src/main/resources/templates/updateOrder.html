@@ -33,7 +33,7 @@
 
         <tr>
             <td>
-                <input type="text" th:field="*{productName}"> Produkt Name </input>
+                <input type="text" th:field="*{productName}"> Product Name </input>
             </td>
         </tr>
 
@@ -58,5 +58,14 @@
 
 <p><a th:href="@{/order/list}">Return to orders list</a></p>
 
+<!--// nie mogę znalejść przyczyny dlaczego gdy aplikacja działa
+//w momęcie kliknięcia na ten link automatycznie zostaje dodana
+//pusta linia nie potrafie znalejsc mometu co jest za to odpowiedzialne
+//chciałbym to zmienic aby w momencie klikniecia w link powracano na
+//strone główną bez dodawania kolejnego wiersza zamowienia.
+//wiem że "editOrder" wygląda identycznie jednak przyczyna tak mi sie wydaje jest w
+//"OrderController" gdyż tam jest różnica już dość sporo opcji próbowałem
+// Ale najwidoczniej nie wszystkie.
+-->
 </body>
 </html>
